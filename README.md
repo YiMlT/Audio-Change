@@ -2,7 +2,7 @@
 
 Audio Change可以让你更好的控制浏览器音频，同时具备少量的标签控制功能。使用前最好将扩展程序固定在导航栏中。
 
-![image-20240518132646366](java/Graduation Design/IMG/image-20240518132646366-17160100151731.png)
+![image-20240518132646366-17160100151731](https://github.com/YiMlT/Audio-Change/assets/96478081/c8b045f6-ac7f-4cc6-b8ec-3dbdb45e7139)
 
 ## 特征
 
@@ -11,7 +11,8 @@ Audio Change可以让你更好的控制浏览器音频，同时具备少量的�
 3. 切换输出可以将选中标签音频输出到设备上。
 4. 点击标签列表中的标签即可将含有该标签的窗口显示至最上层，若在另一个桌面上也会切换过去。
 
-![演示](java/Graduation Design/IMG/演示-17160114146592.gif)
+![演示](https://github.com/YiMlT/Audio-Change/assets/96478081/640b163f-37e1-4d1a-b8a9-2b4d9b6234b5)
+
 
 ## 待修改bug
 
