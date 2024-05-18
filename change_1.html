@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style>
+			body {
+				height: 400px;
+				width: 300px;
+			}
+
+			a {
+				color: black;
+				text-decoration: none;
+			}
+
+			.head {
+				display: flex;
+				justify-content: flex-start;
+				height: 35px;
+			}
+
+			.head_box {
+				display: flex;
+				justify-content: flex-start;
+				height: 35px;
+			}
+
+			.head_title {
+				font-size: 17px;
+				padding: 0 10px;
+				font-weight: bold;
+				overflow: hidden;
+				line-height: 35px;
+			}
+
+			.ribbon {
+				align-items: center;
+				display: flex;
+				height: 52px;
+			}
+
+			.slider {
+				width: 260px;
+				padding: 15px 0;
+			}
+
+			.ribbon_slider {
+				width: 98%;
+			}
+
+			.ribbon_slider_value {
+				font-size: 17px;
+				margin: 5px;
+				width: 30px;
+				text-align: center;
+				line-height: 52px;
+			}
+
+			.hr-solid-content {
+				color: #a2a9b6;
+				border: 0;
+				font-size: 12px;
+				padding: 1em 0;
+				position: relative;
+			}
+
+			.hr-solid-content::before {
+				content: attr(data-content);
+				position: absolute;
+				padding: 0 1ch;
+				line-height: 1px;
+				border: solid #d0d0d5;
+				border-width: 0 99vw;
+				width: fit-content;
+				/* for 不支持fit-content浏览器 */
+				white-space: nowrap;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			h2 {
+				text-align: center;
+			}
+
+			.button {
+				display: flex;
+				justify-content: flex-start;
+				height: 100%;
+				color: black;
+				text-decoration: none;
+			}
+
+			.ul_list {
+				list-style: none;
+				padding: 0px;
+				margin: 0px;
+			}
+
+			.li_list {
+				list-style: none;
+				padding: 5px 0;
+				height: 50px;
+			}
+
+			.tab_button {
+				background-color: #f5f5f5;
+				border-radius: 10px;
+				height: 100%;
+			}
+
+			.img_button {
+				padding: 12.5px 9px;
+			}
+
+			.title_button {
+				line-height: 50px;
+				font-size: 12px;
+				text-align: left;
+				width: 227.8px;
+				overflow: hidden;
+				padding-left: 5px;
+				white-space: nowrap;
+			}
+
+			.tabList {
+				height: 278px;
+				overflow: auto;
+			}
+
+			.ribbon_buttons {
+				display: flex;
+				width: 100%;
+			}
+
+			.button_ribbon {
+				width: 90px;
+				background-color: #e5e5e5;
+				border-radius: 10px;
+				text-align: center;
+				line-height: 30px;
+				color: black;
+				text-decoration: none;
+			}
+
+			.box {
+				background-color: #bae5a9;
+				border-radius: 10px;
+				padding: 10px;
+			}
+
+			.box_1 {
+				background-color: #abe296;
+				border-radius: 10px;
+				padding: 10px;
+				display: none;
+			}
+
+			.function_button {
+				width: 10%;
+				padding: 12px 9px 12px 4px;
+				display: none;
+			}
+
+			.close_tab_a {
+				color: black;
+				text-decoration: none;
+			}
+
+			.close_tab_div {
+				width: 100%;
+				height: 100%;
+				line-height: 26px;
+				text-align: center;
+				font-size: 15px;
+				border-radius: 10px;
+			}
+
+			// 滚动条整体
+			::-webkit-scrollbar {
+				z-index: 50;
+				width: 10px;
+				height: 3px;
+			}
+
+			// 滚动条滑道
+			::-webkit-scrollbar-track {
+				background-color: rgba(0, 0, 0, 0);
+			}
+
+			// 滚动滑块样式
+			::-webkit-scrollbar-thumb {
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				background-color: rgba(0, 0, 0, 0.1);
+				transition: all .2s;
+				height: 20px;
+				border: 1px solid rgba(0, 0, 0, 0.2);
+			}
+
+			.audioList {
+				/* padding: 10px 0 0 0; */
+			}
+
+			.ul_list_1 {
+				list-style: none;
+				padding: 0px;
+				margin: 0px;
+			}
+
+			.li_list_1 {
+				list-style: none;
+				padding: 5px 0;
+				height: 50px;
+			}
+
+			.tab_button_1 {
+				background-color: #f5f5f5;
+				border-radius: 10px;
+				height: 100%;
+			}
+
+			.function_button_1 {
+				width: 5%;
+				padding: 15px 13px 9px 0px;
+				display: block;
+			}
+
+			.close_tab_a_1 {
+				color: black;
+				text-decoration: none;
+			}
+
+			.close_tab_div_1 {
+				width: 100%;
+				height: 100%;
+				line-height: 26px;
+				text-align: center;
+				font-size: 15px;
+				border-radius: 10px;
+			}
+
+			.button_1 {
+				display: flex;
+				justify-content: flex-start;
+				height: 100%;
+				color: black;
+				text-decoration: none;
+				overflow: hidden;
+				/*禁止换行*/
+				white-space: nowrap;
+				/*超出用省略号代替*/
+				text-overflow: ellipsis;
+			}
+
+			.img_button_1 {
+				padding: 12.5px 9px;
+			}
+
+			.title_button_1 {
+				line-height: 50px;
+				font-size: 12px;
+				text-align: left;
+				width: 227.8px;
+				overflow: hidden;
+				padding-left: 5px;
+			}
+
+			.head_button_a {
+				color: black;
+				text-decoration: none;
+			}
+
+			.head_button_div {
+				height: 100%;
+				font-size: 17px;
+				line-height: 26px;
+				padding: 2px 0 0 0;
+			}
+
+			.audioDevice {
+				width: 100%;
+				margin: 8px 0 0 0;
+				border-radius: 10px;
+				background-color: #e5e5e5;
+				padding: 2px 0;
+			}
+
+			.device {
+				width: 100%;
+				height: 30px;
+				line-height: 30px;
+				display: flex;
+				overflow: hidden;
+				/*禁止换行*/
+				white-space: nowrap;
+				/*超出用省略号代替*/
+				text-overflow: ellipsis;
+			}
+
+			.device_input {
+				text-align: center;
+				width: 10%;
+			}
+
+			.device_text {
+				width: 90%;
+			}
+
+			.hr-solid-content-device {
+				align: center;
+				width: 300;
+				color: #987cb9;
+				SIZE: 1;
+				margin: 0 5px;
+			}
+
+			.device_input_class {
+				margin: 8.5px 3px 0 3px;
+			}
+		</style>
+		<script src="js/jquery-3.7.1.js"></script>
+	</head>
+	<body>
+		<div class="box">
+			<div class="head">
+				<div class="head_img">
+					<img class="img_head" src="COVER.jpg" height="35px" width="35px" />
+				</div>
+				<div class="head_title">
+					Volume Change
+				</div>
+			</div>
+			<div class="ribbon_father">
+			</div>
+
+			<div class="ribbon">
+				<div class="slider">
+					<input id="slider" class="ribbon_slider" type="range" min="0" max="200" value="100">
+				</div>
+				<div id="sliderValue" class="ribbon_slider_value">100</div>
+			</div>
+			<div class="ribbon_buttons">
+				<a href="#" class="button_ribbon" style="margin: 0 2.5px 0 0;">静音</a>
+				<a href="#" class="button_ribbon" style="margin: 0 2.5px 0 2.5px;">重置音量</a>
+				<a href="#" class="button_ribbon" style="margin: 0 0 0 2.5px;">切换输出</a>
+			</div>
+			<div class="audioDevice" style="display: none;">
+				<form method="POST" class="form_1">
+				</form>
+			</div>
+		</div>
+		<div class="audioList">
+			<ul class="ul_list_1">
+			</ul>
+		</div>
+		<hr class="hr-solid-content" data-content="标签列表">
+		<div class="tabList">
+			<h2 class="h2_title">暂无可调用标签</h2>
+			<ul class="ul_list">
+			</ul>
+		</div>
+		<div class="other">
+		</div>
+		<script src="popup_4.js"></script>
+	</body>
+</html>

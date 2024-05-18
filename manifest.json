@@ -1,0 +1,17 @@
+{
+	"name": "Audio Change",
+	"description": "Base Level Extension",
+	"version": "1.0",
+	"manifest_version": 3,
+	"action": {
+		"default_popup": "change_1.html",
+		"default_icon": "COVER.jpg"
+	},
+	"permissions": [
+		"activeTab", "tabCapture", "tabs", "nativeMessaging", "offscreen", "contentSettings"
+	],
+	"background": {
+		"service_worker": "background_4.js",
+		"type": "module"
+	}
+}
