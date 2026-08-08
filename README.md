@@ -6,11 +6,18 @@
 ![Vue 3](https://img.shields.io/badge/Vue-3.x-brightgreen.svg)
 ![Element Plus](https://img.shields.io/badge/Element_Plus-2.x-blue.svg)
 
+<p align="center">
+  <a href="./README.md">简体中文</a>
+    /
+  <a href="./README_en.md">English</a>
+</p>
+
 ---
 
 ## 📖 简介
 
 **Audio Change** 是一款 Chrome 浏览器扩展，旨在解决网页音量控制不便的问题。它允许您：
+
 - 独立调节任意标签页的音量（0% ~ 200%）
 - 一键静音/取消静音
 - 重置音量至 100%
@@ -39,8 +46,8 @@
 
 1. **下载本项目源码**
    ```bash
-   git clone https://github.com/yourusername/audio-change.git
-   cd audio-change
+   git clone https://github.com/YiMlT/Audio-Change.git
+   cd Audio-Change
    ```
 
 2. **安装依赖并构建（可选）**
@@ -92,25 +99,6 @@
   - `offscreen` 用于离屏文档处理音频流
   - `storage` 用于持久化设置（可扩展）
 - **语言**：JavaScript (ES Modules)
-
----
-
-## 📂 目录结构
-
-```
-audio-change/
-├── assets/               # 图标资源
-├── js/
-│   ├── background.js    # 后台服务 worker
-│   ├── content.js       # 内容脚本（音频处理）
-│   └── ...              # 其他业务逻辑
-├── popup.html           # 弹出页面
-├── index.html           # Vue 入口模板
-├── manifest.json        # 扩展清单
-├── App.vue              # Vue 主组件
-├── index.js             # Vue 入口文件
-└── README.md            # 本文件
-```
 
 ---
 
